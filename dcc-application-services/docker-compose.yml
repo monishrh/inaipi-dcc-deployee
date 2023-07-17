@@ -1,0 +1,177 @@
+version: '3.9'
+services:
+  social-webhook:
+    build:
+      context: ./dcc-socialmedia-webhook/
+      dockerfile: Dockerfile
+    container_name: social-webhook-dcc
+    hostname: social-webhook-dcc
+    logging:
+      driver : local
+      options:
+        max-size: "10M"
+    restart: always
+    ports:
+      - "8005:8005"
+    networks:
+      - dcc-network
+  chat-websocket:
+    build:
+      context: ./inaipi-dcc-socketio/
+      dockerfile: Dockerfile
+    container_name: socket-server-dcc
+    hostname: socket-server-dcc
+    logging:
+      driver : local
+      options:
+        max-size: "10M"
+    restart: always
+    ports:
+      - "8006:8005"
+    networks:
+      - dcc-network
+  chat-api:
+    build:
+      context: ./inaipi-digital-channels/
+      dockerfile: Dockerfile
+    container_name: chat-api-server-dcc
+    hostname: chat-api-server-dcc
+    logging:
+      driver : local
+      options:
+        max-size: "10M"
+    restart: always
+    ports:
+      - "8007:8001"
+    networks:
+      - dcc-network
+  uilogs-api:
+    build:
+      context: ./dcc-uilogs/
+      dockerfile: Dockerfile
+    container_name: uilogs-api-dcc
+    hostname: uilogs-api-dcc
+    logging:
+      driver : local
+      options:
+        max-size: "10M"
+    restart: always
+    ports:
+      - "8008:8006"
+    networks:
+      - dcc-network
+  file-service:
+    build:
+      context: ./fileserver-microservices/
+      dockerfile: Dockerfile
+    container_name: file-service-dcc
+    hostname: file-service-dcc
+    logging:
+      driver : local
+      options:
+        max-size: "10M"
+    restart: always
+    ports:
+      - "8009:8090"
+    networks:
+      - dcc-network
+  dcc-reports:
+    build:
+      context: ./avaya-cc-reports/
+      dockerfile: Dockerfile
+    container_name: report-api-dcc
+    hostname: report-api-dcc
+    logging:
+      driver : local
+      options:
+        max-size: "10M"
+    restart: always
+    ports:
+      - "8010:8040"
+    networks:
+      - dcc-network
+  
+  dcc-email:
+    build:
+      context: ./DCC_EMail_API/
+      dockerfile: dockerfile
+    container_name: email-api-dcc
+    hostname: email-api-dcc
+    logging:
+      driver : local
+      options:
+        max-size: "10M"
+    restart: always
+    ports:
+      - "8088:8088"
+    networks:
+      - dcc-network
+
+  user-mmanagement-api:
+    image: praveensk1301/user_management201:userv3
+    container_name: usermodule-api-dcc
+    hostname: usermodule-api-dcc
+    logging:
+      driver : local
+      options:
+        max-size: "10M"
+    restart: always
+    ports:
+      - "8680:8680"
+    networks:
+      - dcc-network
+  email-analyser:
+    image: indukishen/mail-analyser:0.0.5.RELEASE
+    container_name: email-analyser-dcc
+    hostname: email-analyser-dcc
+    logging:
+      driver : local
+      options:
+        max-size: "10M"
+    restart: always
+    ports:
+      - "9005:9005"
+    networks:
+      - dcc-network
+
+  routing-engine:
+    image: praveensk1301/routingrepo201:enginev8
+    container_name: routing-engine-dcc
+    hostname: routing-engine-dcc
+    logging:
+      driver : local
+      options:
+        max-size: "10M"
+    restart: always
+    ports:
+      - "9091:9091"
+    networks:
+      - dcc-network
+  queuing-engine:
+    image: praveensk1301/queue201:queuev6
+    container_name: queuing-engine-dcc
+    hostname: queuing-engine-dcc
+    logging:
+      driver : local
+      options:
+        max-size: "10M"
+    restart: always
+    ports:
+      - "9293:9293"
+    networks:
+      - dcc-network
+  api-gateway:
+    image: praveensk1301/gateway21:gatewayv2
+    container_name: api-gateway-dcc
+    hostname: api-gateway-dcc
+    logging:
+      driver : local
+      options:
+        max-size: "10M"
+    restart: always
+    ports:
+      - "8762:8762"
+    networks:
+      - dcc-network
+networks:
+  dcc-network:
