@@ -43,6 +43,8 @@ services:
     restart: always
     ports:
       - "8007:8007"
+    volumes:
+      - '/var/www/dcc:/usr/src/app/frontend/build'
     networks:
       - dcc-network
   uilogs-api:
