@@ -110,7 +110,7 @@ services:
       - dcc-network
 
   user-mmanagement-api:
-    image: praveensk1301/user_management201:userawsv4
+    image: praveensk1301/user_management201:userawsv2
     container_name: usermodule-api-dcc
     hostname: usermodule-api-dcc
     logging:
@@ -150,7 +150,7 @@ services:
     networks:
       - dcc-network
   queuing-engine:
-    image: praveensk1301/queue201:queueawsv4
+    image: 
     container_name: queuing-engine-dcc
     hostname: queuing-engine-dcc
     logging:
