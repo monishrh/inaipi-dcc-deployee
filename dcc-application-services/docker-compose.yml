@@ -150,7 +150,7 @@ services:
     networks:
       - dcc-network
   queuing-engine:
-    image: 
+    image: praveensk1301/queue201:queueawsv4
     container_name: queuing-engine-dcc
     hostname: queuing-engine-dcc
     logging:
