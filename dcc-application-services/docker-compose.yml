@@ -36,6 +36,7 @@ services:
       dockerfile: Dockerfile
     container_name: chat-api-server-dcc
     hostname: chat-api-server-dcc
+    cpus: 4
     logging:
       driver : local
       options:
