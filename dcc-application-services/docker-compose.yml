@@ -109,7 +109,7 @@ services:
       - dcc-network
 
   user-mmanagement-api:
-    image: praveensk1301/user_management201:userawsv5
+    image: praveensk1301/user_management201:userv5
     container_name: usermodule-api-dcc
     hostname: usermodule-api-dcc
     logging:
