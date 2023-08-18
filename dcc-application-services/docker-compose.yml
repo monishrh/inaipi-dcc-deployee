@@ -21,6 +21,9 @@ services:
       dockerfile: Dockerfile
     container_name: socket-server-dcc
     hostname: socket-server-dcc
+    environment:
+      - EUREKA_HOST=192.168.1.201
+      - HOST_IP_OF_SERVICE=10.10.1.1
     logging:
       driver : local
       options:
@@ -53,6 +56,8 @@ services:
       dockerfile: Dockerfile
     container_name: uilogs-api-dcc
     hostname: uilogs-api-dcc
+    environment:
+      - APP_PORT=8006
     logging:
       driver : local
       options:
