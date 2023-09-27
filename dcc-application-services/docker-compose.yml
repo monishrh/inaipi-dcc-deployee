@@ -107,7 +107,7 @@ services:
     networks:
       - dcc-network
   user-mmanagement-api:
-    image: praveensk1301/user_management201:userv5
+    image: devopsedaya/dcc-usermanagement-release-v-1.1.001:latest
     container_name: usermodule-api-dcc
     hostname: usermodule-api-dcc
     logging:
@@ -133,7 +133,7 @@ services:
     networks:
       - dcc-network
   routing-engine:
-    image: praveensk1301/routingrepo201:engineawsv4
+    image: devopsedaya/dcc-routing-release-v-1.1.001:latest
     container_name: routing-engine-dcc
     hostname: routing-engine-dcc
     logging:
@@ -146,7 +146,7 @@ services:
     networks:
       - dcc-network
   queuing-engine:
-    image: praveensk1301/queue201:queueawsv4
+    image: devopsedaya/dcc-queing-release-v-1.1.001:latest
     container_name: queuing-engine-dcc
     hostname: queuing-engine-dcc
     logging:
@@ -159,7 +159,7 @@ services:
     networks:
       - dcc-network
   api-gateway:
-    image: praveensk1301/gateway21:gatewayawsv2
+    image: devopsedaya/dcc-api-gateway-release-v-1.1.001:latest
     container_name: api-gateway-dcc
     hostname: api-gateway-dcc
     logging:
