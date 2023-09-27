@@ -84,3 +84,14 @@ steps->
         * add aurgiment x-max-priority as 5
     - Add 
 
+mongoDB Add user 
+-------------------
+after login to the mongodb-Compos or cli need to add a user like below
+use admin
+db.createUser(
+  {
+    user: "sa",
+    pwd: "Cognicx123",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+)
