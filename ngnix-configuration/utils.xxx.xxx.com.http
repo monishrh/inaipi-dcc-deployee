@@ -1,0 +1,138 @@
+server {
+    server_name utils.xxxxxxx.xxxxxx.com;
+    access_log            /var/log/nginx/utils.access.log main_ext;
+    listen 80;
+#------Ticketing
+
+location /ticketing/ {
+if ($request_method = OPTIONS ) {
+    add_header "Access-Control-Allow-Origin"  *;
+    add_header "Access-Control-Allow-Methods" "GET, POST, OPTIONS, HEAD";
+    add_header "Access-Control-Allow-Headers" "tenantid,Authorization,ssoToken, Origin, X-Requested-With,Content-Type, Accept";
+    return 200;
+    }
+      proxy_set_header        Host $host;
+      proxy_set_header        X-Real-IP $remote_addr;
+      proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header        X-Forwarded-Proto $scheme;
+      proxy_set_header        Connection $http_connection;
+      proxy_pass          https://spacesreporter.inaipiapp.com/;
+      proxy_read_timeout  90;
+      proxy_redirect off;
+      proxy_http_version 1.1;
+
+  }
+
+#------Reports
+
+location /reports/ {
+        if ($request_method = OPTIONS ) {
+                add_header "Access-Control-Allow-Origin"  *;
+                add_header "Access-Control-Allow-Methods" "GET, POST, OPTIONS, HEAD";
+                add_header "Access-Control-Allow-Headers" "tenantid,Authorization,ssoToken, Origin, X-Requested-With, Content-Type, Accept";
+                return 200;
+        }
+      proxy_set_header        Host $host;
+      proxy_set_header        X-Real-IP $remote_addr;
+      proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header        X-Forwarded-Proto $scheme;
+      proxy_set_header        Connection $http_connection;
+      # Fix the “It appears that your reverse proxy set up is broken" error.
+      proxy_pass          http://report-api-dcc:8010/;
+      proxy_read_timeout  90;
+      proxy_redirect off;
+      proxy_http_version 1.1;
+  }
+
+#---------Email service
+
+location /email/ {
+        if ($request_method = OPTIONS ) {
+                add_header "Access-Control-Allow-Origin"  *;
+                add_header "Access-Control-Allow-Methods" "GET, POST, OPTIONS, HEAD, PUT";
+                add_header "Access-Control-Allow-Headers" "tenantid,Authorization,ssoToken, Origin, X-Requested-With, Content-Type, Accept";
+                return 200;
+        }
+      proxy_set_header        Host $host;
+      proxy_set_header        X-Real-IP $remote_addr;
+      proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header        X-Forwarded-Proto $scheme;
+      proxy_set_header        Connection $http_connection;
+      # Fix the “It appears that your reverse proxy set up is broken" error.
+      proxy_pass          http://email-api-dcc:8088/;
+      proxy_read_timeout  90;
+      proxy_redirect off;
+      proxy_http_version 1.1;
+  }
+#----------Webhooks
+location /webhook/ {
+        if ($request_method = OPTIONS ) {
+                add_header "Access-Control-Allow-Origin"  *;
+                add_header "Access-Control-Allow-Methods" "GET, POST, OPTIONS, HEAD";
+                add_header "Access-Control-Allow-Headers" "tenantid,Authorization,ssoToken, Origin, X-Requested-With, Content-Type, Accept";
+                return 200;
+        }
+      proxy_set_header        Host $host;
+      proxy_set_header        X-Real-IP $remote_addr;
+      proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header        X-Forwarded-Proto $scheme;
+      proxy_set_header        Connection $http_connection;
+      proxy_pass          http://social-webhook-dcc:8005/;
+      proxy_read_timeout  90;
+      proxy_redirect off;
+      proxy_http_version 1.1;
+  }
+#---------file service
+location /upload/ {
+      client_max_body_size 200M;
+      proxy_set_header        Host $host;
+      proxy_set_header        X-Real-IP $remote_addr;
+      proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header        X-Forwarded-Proto $scheme;
+      proxy_set_header        Connection $http_connection;
+      proxy_pass          http://file-service-dcc:8009/;
+      proxy_read_timeout  90;
+      proxy_redirect off;
+  }
+#----------> logs
+location /logs/ {
+        if ($request_method = OPTIONS ) {
+                add_header "Access-Control-Allow-Origin"  *;
+                add_header "Access-Control-Allow-Methods" "GET, POST, OPTIONS, HEAD";
+                add_header "Access-Control-Allow-Headers" "tenantid,Authorization,ssoToken, Origin, X-Requested-With, Content-Type, Accept";
+                return 200;
+        }
+      proxy_set_header        Host $host;
+      proxy_set_header        X-Real-IP $remote_addr;
+      proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header        X-Forwarded-Proto $scheme;
+      proxy_set_header        Connection $http_connection;
+      # Fix the “It appears that your reverse proxy set up is broken" error.
+      proxy_pass          http://uilogs-api-dcc:8008/;
+      proxy_read_timeout  90;
+      proxy_redirect off;
+      proxy_http_version 1.1;
+  }
+
+#----------> socket.io
+location / {
+        if ($request_method = OPTIONS ) {
+                add_header "Access-Control-Allow-Origin"  *;
+                add_header "Access-Control-Allow-Methods" "GET, POST, OPTIONS, HEAD";
+                add_header "Access-Control-Allow-Headers" "tenantid,Authorization,ssoToken, Origin, X-Requested-With, Content-Type, Accept";
+                return 200;
+        }
+      proxy_set_header        Host $host;
+      proxy_set_header        X-Real-IP $remote_addr;
+      proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header        X-Forwarded-Proto $scheme;
+      proxy_set_header        Connection $http_connection;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection "upgrade";
+      proxy_pass          http://socket-server-dcc:8006/;
+      proxy_read_timeout  90;
+      proxy_redirect off;
+      proxy_http_version 1.1;
+  }
+
+}

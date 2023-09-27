@@ -1,0 +1,26 @@
+server {
+    server_name gateway.xxxxxxx.xxxxxx.com;
+    access_log            /var/log/nginx/gateway.access.log main_ext;
+
+    location / {
+        if ($request_method = OPTIONS ) {
+                add_header "Access-Control-Allow-Origin"  *;
+                add_header "Access-Control-Allow-Methods" "GET, POST, OPTIONS, HEAD";
+                add_header "Access-Control-Allow-Headers" "tenantid,Authorization, Origin, X-Requested-With, Content-Type, Accept";
+                return 200;
+        }
+
+      proxy_set_header        Host $host;
+      proxy_set_header        X-Real-IP $remote_addr;
+      proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header        X-Forwarded-Proto $scheme;
+      proxy_set_header        Connection $http_connection;
+      proxy_pass          http://api-gateway-dcc:8762;
+      proxy_read_timeout  90;
+      proxy_redirect off;
+  }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/gateway.inaipi.ae/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/gateway.inaipi.ae/privkey.pem; # managed by Certbot
+}
