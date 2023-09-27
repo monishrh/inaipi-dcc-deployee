@@ -1,9 +1,7 @@
 version: '3.9'
 services:
   social-webhook:
-    build:
-      context: ./dcc-socialmedia-webhook/
-      dockerfile: Dockerfile
+    image: devopsedaya/dcc-socialmedia-webhook-release-v-1.1.001:latest
     container_name: social-webhook-dcc
     hostname: social-webhook-dcc
     logging:
@@ -16,9 +14,7 @@ services:
     networks:
       - dcc-network
   chat-websocket:
-    build:
-      context: ./inaipi-dcc-socketio/
-      dockerfile: Dockerfile
+    image: devopsedaya/inaipi-dcc-socketio-release-v-1.1.001:latest
     container_name: socket-server-dcc
     hostname: socket-server-dcc
     logging:
@@ -31,9 +27,7 @@ services:
     networks:
       - dcc-network
   chat-api:
-    build:
-      context: ./inaipi-digital-channels/
-      dockerfile: Dockerfile
+    image: devopsedaya/inaipi-digital-channels-release-v-1.1.001
     container_name: chat-api-server-dcc
     hostname: chat-api-server-dcc
     cpus: 4
@@ -47,9 +41,7 @@ services:
     networks:
       - dcc-network
   uilogs-api:
-    build:
-      context: ./dcc-uilogs/
-      dockerfile: Dockerfile
+    image: devopsedaya/dcc-uilogs-release-v-1.1.001:latest
     container_name: uilogs-api-dcc
     hostname: uilogs-api-dcc
     logging:
@@ -62,9 +54,7 @@ services:
     networks:
       - dcc-network
   file-service:
-    build:
-      context: ./fileserver-microservices/
-      dockerfile: Dockerfile
+    image: devopsedaya/fileserver-microservices-release-v-1.1.001:latest
     container_name: file-service-dcc
     hostname: file-service-dcc
     logging:
@@ -77,9 +67,7 @@ services:
     networks:
       - dcc-network
   dcc-reports:
-    build:
-      context: ./avaya-cc-reports/
-      dockerfile: Dockerfile
+    image: devopsedaya/dcc-reports-release-v-1.1.001:latest
     container_name: report-api-dcc
     hostname: report-api-dcc
     logging:
@@ -93,9 +81,7 @@ services:
       - dcc-network
   
   dcc-email:
-    build:
-      context: ./DCC_EMail_API/
-      dockerfile: dockerfile
+    image: devopsedaya/dcc-email-api-release-v-1.1.001:latest
     container_name: email-api-dcc
     hostname: email-api-dcc
     logging:
@@ -108,9 +94,7 @@ services:
     networks:
       - dcc-network
   dcc-cron:
-    build:
-      context: ./dcc-cronjobs/
-      dockerfile: Dockerfile
+    image: devopsedaya/dcc-cron-jobs-release-v-1.1.001:latest
     container_name: cron-jobs-dcc
     hostname: cron-jobs-dcc
     logging:
@@ -148,7 +132,6 @@ services:
       - "9005:9005"
     networks:
       - dcc-network
-
   routing-engine:
     image: praveensk1301/routingrepo201:engineawsv4
     container_name: routing-engine-dcc
