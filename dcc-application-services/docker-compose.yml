@@ -107,7 +107,21 @@ services:
       - "8088:8088"
     networks:
       - dcc-network
-
+  dcc-cron:
+    build:
+      context: ./dcc-cronjobs/
+      dockerfile: Dockerfile
+    container_name: cron-jobs-dcc
+    hostname: cron-jobs-dcc
+    logging:
+      driver : local
+      options:
+        max-size: "10M"
+    restart: always
+    ports:
+      - "8070:8070"
+    networks:
+      - dcc-network
   user-mmanagement-api:
     image: praveensk1301/user_management201:userv5
     container_name: usermodule-api-dcc

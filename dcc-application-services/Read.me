@@ -1,0 +1,50 @@
+This file describes the configuration we need to do in the Hosts before executing the Deployment
+
+Add bellow information with relevent ip address to the host mechine , 
+If we are using multiple hosts each host should be configured with valid host entres. 
+
+
+Services. 
+---------------------------------
+
+mongodb.inaipi.app <ip-address-of-mongodb-server>
+eureka.inaipi.app <ip-address-of-eureka-service-host>
+redis.inaipi.app <ip-address-of-Redis-server>
+rabbitmq.inaipi.app <ip-address-of-rabbitmq>
+mssql.inaipi.app <ip-address-of-MSSQL-Server>
+
+Optional service deployment 
+----------------------------------
+In case of application service deployment with different servers Each server needs to be configured with the below details to reach inter services.
+
+apps.inaipi.app <ip-address-of-the-application-server-host>
+
+social-webhook-dcc <ip-address-of-webhook-service-host-mechine>
+socket-server-dcc <ip-address-of-socket-service-host-mechine>
+chat-api-server-dcc <ip-address-of-chat-api-service-host-mechine>
+uilogs-api-dcc <ip-address-of-ui-logs-service-host-mechine>
+file-service-dcc <ip-address-of-file-service-host-mechine>
+report-api-dcc <ip-address-of-reporter-service-host-mechine>
+email-api-dcc <ip-address-of-email-service-host-mechine>
+usermodule-api-dcc <ip-address-of-user-management-service-host-mechine>
+email-analyser-dcc <ip-address-of-email-analyser-service-host-mechine>
+routing-engine-dcc <ip-address-of-routing-service-host-mechine>
+queuing-engine-dcc <ip-address-of-queuing-service-host-mechine>
+api-gateway-dcc <ip-address-of-gateway-service-host-mechine>
+
+
+websocket Service needs to be configired with the CORS exeption urls.
+-> Login to the container and alter the confi.json file to the updted one.
+
+-> check for the tenent list API end point.
+
+Cronjob service 
+
+What is Login base url
+what is customURL
+
+Email Service 
+
+need latest code for build.
+
+
