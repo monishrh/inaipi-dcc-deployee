@@ -1,6 +1,6 @@
 server {
     server_name gateway.xxxxxxx.xxxxxx.com;
-    access_log            /var/log/nginx/gateway.access.log main_ext;
+    access_log            /var/log/nginx/gateway.access.log;
 
     location / {
         if ($request_method = OPTIONS ) {

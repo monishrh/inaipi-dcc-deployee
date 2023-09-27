@@ -1,6 +1,6 @@
 server {
     server_name dcc.xxxxxx.xxxxxx.com;
-    access_log            /var/log/nginx/dcc.access.log main_ext;
+    access_log            /var/log/nginx/dcc.access.log;
 
 #----dcc public serving
     location / {

@@ -52,8 +52,9 @@ Sample host entry
 10.10.2.4 routing-engine-dcc
 10.10.2.4 queuing-engine-dcc
 10.10.2.4 api-gateway-dcc
-
-
+127.0.0.1 utils.devops.com
+127.0.0.1 gateway.devops.com
+127.0.0.1 dcc.devops.com
 websocket Service needs to be configired with the CORS exeption urls.
 -> Login to the container and alter the confi.json file to the updted one.
 
@@ -98,3 +99,18 @@ db.createUser(
 
 Ngnix configuration 
 -----------------------
+
+Copy and configure all the ngnix configurations as mentioned in the ngnix-configuration folder
+
+UI_Admin Static file deployment
+-------------------------------------
+
+Download the build file from the below link 
+
+configre the environmental variables 
+  -> Client-> envconfig.js
+  -> Admin-> envconfig.js
+Check all working as expected 
+    -> http://dcc.devops.com/Client/?clientId=a3dc14bd-fe70-4120-8572-461b0dc866b5
+    -> http://dcc.devops.com/?tenantID=a3dc14bd-fe70-4120-8572-461b0dc866b5
+

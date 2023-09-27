@@ -1,6 +1,6 @@
 server {
     server_name utils.xxxxxxx.xxxxxx.com;
-    access_log            /var/log/nginx/utils.access.log main_ext;
+    access_log            /var/log/nginx/utils.access.log;
     listen 80;
 #------Ticketing
 
