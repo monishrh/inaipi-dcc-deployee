@@ -110,6 +110,13 @@ Download the build file from the below link
 configre the environmental variables 
   -> Client-> envconfig.js
   -> Admin-> envconfig.js
+
+Configure Agent Dashboard friendend parameters
+  -> open-container -> /usr/src/app/frontend/src/container/BaseUrl/BaseUrl.js
+
+Configure Socket.io with cors origin url ( the base url of agent Dashboard)
+  -> open-container -> /usr/src/app/config.json
+
 Check all working as expected 
     -> http://dcc.devops.com/Client/?clientId=a3dc14bd-fe70-4120-8572-461b0dc866b5
     -> http://dcc.devops.com/?tenantID=a3dc14bd-fe70-4120-8572-461b0dc866b5
