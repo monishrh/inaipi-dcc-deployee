@@ -1,8 +1,9 @@
-This file describes the configuration we need to do in the Hosts before executing the Deployment
+This Document describes the configuration we need to do in the Hosts before executing the Deployment
+
+Update Host entres for accessing services in all hosts.
 
 Add bellow information with relevent ip address to the host mechine , 
 If we are using multiple hosts each host should be configured with valid host entres. 
-
 
 Services. 
 ---------------------------------
@@ -17,7 +18,6 @@ Optional service deployment
 ----------------------------------
 In case of application service deployment with different servers Each server needs to be configured with the below details to reach inter services.
 
-apps.inaipi.app <ip-address-of-the-application-server-host>
 
 social-webhook-dcc <ip-address-of-webhook-service-host-mechine>
 socket-server-dcc <ip-address-of-socket-service-host-mechine>
@@ -52,13 +52,13 @@ Sample host entry
 10.10.2.4 routing-engine-dcc
 10.10.2.4 queuing-engine-dcc
 10.10.2.4 api-gateway-dcc
-127.0.0.1 utils.devops.com
-127.0.0.1 gateway.devops.com
-127.0.0.1 dcc.devops.com
-websocket Service needs to be configired with the CORS exeption urls.
--> Login to the container and alter the confi.json file to the updted one.
 
--> check for the tenent list API end point.
+
+for testing the services in a PC require to mapp all public domain names to the host mechine if it is not pointed in the DNS server
+--------------------------------------
+127.0.0.1 utils.xxxxxx.xxxxxx.com
+127.0.0.1 gateway.xxxxxx.xxxxxx.com
+127.0.0.1 dcc.xxxxxx.xxxxxx.com
 
 Queing Service deployment requre RabbitMQ needs to be updated with 
 -------------------------------------------------------------------
@@ -126,7 +126,7 @@ Socket io CORS Configuration
 --------------------------------------
 Configure Socket.io with cors origin url ( the base url of agent Dashboard)
   -> open-container -> /usr/src/app/config.json
-  
+
     Note :  To login to the docker container of inaipi-digitial
       --> docker exec -it ID /bin/bash , Replace ID with the container ID
       --> install text editor nano by running command 'apt update && apt install nano'
