@@ -88,6 +88,15 @@ db.createUser(
   }
 )
 
+Data base Initial setup with the backup. 
+----------------------------------------------
+https://29011986-my.sharepoint.com/:f:/g/personal/sarath_k_imperiumapp_com/EnIcnbtHQHVCkAW6CkSVw4UBqIVitkEcilIYMqxV-Gq55w?e=vQA5mW
+
+we can find the version specific backup of both mongoDB and MSSQL from the below link. 
+* for restoring the dump for mongoDB we can use the tool available in the same link. "mongorestore.exe"
+* For MSSQL we can use the MS SQL management Studio Version.
+
+
 Ngnix configuration 
 -----------------------
 
@@ -95,21 +104,35 @@ Copy and configure all the ngnix configurations as mentioned in the ngnix-config
 
 UI_Admin Static file deployment
 -------------------------------------
-
-Download the build file from the below link 
+* Download the build file from the below link 
   https://29011986-my.sharepoint.com/personal/sarath_k_imperiumapp_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fsarath%5Fk%5Fimperiumapp%5Fcom%2FDocuments%2Fpublic%2Fdcc%2Dadmin%2Dpanels&ct=1695826270555&or=Teams%2DHL&ga=1
 
-configre the environmental variables 
-  -> Client-> envconfig.js
-  -> Admin-> envconfig.js
+* configre the environmental variables 
+    -> Client-> envconfig.js
+    -> Admin-> envconfig.js
 
-Configure Agent Dashboard friendend parameters
-  -> open-container -> /usr/src/app/frontend/src/container/BaseUrl/BaseUrl.js
+Agent UI configuration
+--------------------------------
 
+* Configure Agent Dashboard friendend parameters
+    -> open-container -> /usr/src/app/frontend/src/container/BaseUrl/BaseUrl.js
+    -> in the container need to take the React Rebuild by running "npm run build" command
+
+Note :  To login to the docker container of inaipi-digitial
+  --> docker exec -it ID /bin/bash , Replace ID with the container ID
+  --> install text editor nano by running command 'apt update && apt install nano'
+
+Socket io CORS Configuration 
+--------------------------------------
 Configure Socket.io with cors origin url ( the base url of agent Dashboard)
   -> open-container -> /usr/src/app/config.json
+  
+    Note :  To login to the docker container of inaipi-digitial
+      --> docker exec -it ID /bin/bash , Replace ID with the container ID
+      --> install text editor nano by running command 'apt update && apt install nano'
 
+Running a trial 
+--------------------------------------
 Check all working as expected 
     -> http://dcc.devops.com/Client/?clientId=a3dc14bd-fe70-4120-8572-461b0dc866b5
     -> http://dcc.devops.com/?tenantID=a3dc14bd-fe70-4120-8572-461b0dc866b5
-
