@@ -27,7 +27,7 @@ services:
     networks:
       - dcc-network
   chat-api:
-    image: devopsedaya/inaipi-digital-channels-release-v-1.1.001
+    image: devopsedaya/inaipi-digital-channels-release-v-1.2.001
     container_name: chat-api-server-dcc
     hostname: chat-api-server-dcc
     cpus: 4
