@@ -137,7 +137,35 @@ Check all working as expected
     -> http://dcc.devops.com/Client/?clientId=a3dc14bd-fe70-4120-8572-461b0dc866b5
     -> http://dcc.devops.com/?tenantID=a3dc14bd-fe70-4120-8572-461b0dc866b5
 
+Creating Docker Build and psuhing image to registery for update.
+----------------------------------------------------------------------
+CLI->
+1. Update code in git
+2. Go to Build Mechine 
+3. Pull the code to build mechine directory ( eg. /home/app/)
+4. Build the image ( provide proper name and name space) docker build --rm -t <devopsedaya/inaipi-digital-channels-release-v-1.2.001> .
+5. push the code to DockerHub Registry docker image push <devopsedaya/inaipi-digital-channels-release-v-1.2.001:latest>
 
-Recreating Docker image and pushing it to registry. 
+GUI
+1. Update Code in git
+2. Go to build mechine
+3. open VS Code and and open the Service Folder. ( eg. in home-> apps)
+4. Pull the latest code by going into the terminal panel -> git pull
+5. In VS code From File browser navigation panel Right Click on Dockerfile -> Build image
+6. once build is completed navigate to Docker extention menu-> images-> find the latest image -> exapnd it and the tag 'Latest'
+7. Once image is sopted Right click-> push 
+8. Chose the Name space 'devopsedaya' -> confirm the image name -> hit enter. 
+9. Configrm all layers is uploaded
 
-docker build --rm -t <devopsedaya/inaipi-digital-channels-release-v-1.2.001> .
+Deplye new build. 
+1. Go to Server and Navigate to the deployement folder ( inaipi-dcc-deployee)
+2. Pull any Deplyment script change is done using git pull. 
+3. if deployement script is updated
+4. Navigate to dcc-application-services folder
+5. command docker compose pull , it will update the latest image 
+6. execute docker compose up -d <service-name)
+7. Cross verify the service is recreated not just started.
+
+
+
+
