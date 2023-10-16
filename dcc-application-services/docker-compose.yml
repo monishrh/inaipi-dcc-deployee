@@ -94,7 +94,7 @@ services:
     networks:
       - dcc-network
   dcc-cron:
-    image: devopsedaya/dcc-cron-jobs-release-v-1.1.001:latest
+    image: devopsedaya/dcc-cron-jobs-release-v-1.1.002:latest
     container_name: cron-jobs-dcc
     hostname: cron-jobs-dcc
     logging:
