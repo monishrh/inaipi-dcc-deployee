@@ -64,7 +64,7 @@ services:
     networks:
       - dcc-network
   eureka:
-    image: 'praveensk1301/eureka21:eurekav1'
+    image: 'devopsedaya/dcc-eureka-release-v-1.1.001'
     container_name: dcc-eureka
     hostname: inaipi-eureka
     logging:
