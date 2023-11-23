@@ -39,8 +39,6 @@ services:
     restart: always
     ports:
       - "8007:8001"
-    networks:
-      - dcc-network
   uilogs-api:
     image: devopsedaya/dcc-uilogs-release-v-1.1.001:latest
     container_name: uilogs-api-dcc
