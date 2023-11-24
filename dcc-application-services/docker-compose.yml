@@ -30,7 +30,8 @@ services:
     image: devopsedaya/inaipi-digital-channels-release-v-1.4.001:latest
     container_name: chat-api-server-dcc
     hostname: chat-api-server-dcc
-    network_mode: host
+    volumes:
+      - /etc/hosts:/etc/hosts:ro
     cpus: 4
     logging:
       driver : local
@@ -39,6 +40,8 @@ services:
     restart: always
     ports:
       - "8007:8001"
+    networks:
+      - dcc-network
   uilogs-api:
     image: devopsedaya/dcc-uilogs-release-v-1.1.001:latest
     container_name: uilogs-api-dcc
