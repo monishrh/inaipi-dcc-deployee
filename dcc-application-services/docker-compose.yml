@@ -16,7 +16,7 @@ services:
     networks:
       - dcc-network
   chat-websocket:
-    image: devopsedaya/inaipi-dcc-socketio-release-v-1.1.001:latest
+    image: devopsedaya/ntt-naipi-dcc-socketio-release-v-1.1.001:latest
     container_name: socket-server-dcc
     hostname: socket-server-dcc
     volumes:
@@ -47,7 +47,7 @@ services:
     networks:
       - dcc-network
   uilogs-api:
-    image: devopsedaya/dcc-uilogs-release-v-1.1.001:latest
+    image: devopsedaya/ntt.dcc-uilogs-release-v-1.1.001:latest
     container_name: uilogs-api-dcc
     hostname: uilogs-api-dcc
     volumes:
