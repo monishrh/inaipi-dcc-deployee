@@ -4,6 +4,8 @@ services:
     image: devopsedaya/dcc-socialmedia-webhook-release-v-1.1.001:latest
     container_name: social-webhook-dcc
     hostname: social-webhook-dcc
+    volumes:
+      - /etc/hosts:/etc/hosts:ro
     logging:
       driver : local
       options:
@@ -17,6 +19,8 @@ services:
     image: devopsedaya/inaipi-dcc-socketio-release-v-1.1.001:latest
     container_name: socket-server-dcc
     hostname: socket-server-dcc
+    volumes:
+      - /etc/hosts:/etc/hosts:ro
     logging:
       driver : local
       options:
@@ -46,6 +50,8 @@ services:
     image: devopsedaya/dcc-uilogs-release-v-1.1.001:latest
     container_name: uilogs-api-dcc
     hostname: uilogs-api-dcc
+    volumes:
+      - /etc/hosts:/etc/hosts:ro
     logging:
       driver : local
       options:
@@ -59,6 +65,8 @@ services:
     image: devopsedaya/fileserver-microservices-release-v-1.1.001:latest
     container_name: file-service-dcc
     hostname: file-service-dcc
+    volumes:
+      - /etc/hosts:/etc/hosts:ro
     logging:
       driver : local
       options:
@@ -72,6 +80,8 @@ services:
     image: devopsedaya/dcc-reports-release-v-1.1.001:latest
     container_name: report-api-dcc
     hostname: report-api-dcc
+    volumes:
+      - /etc/hosts:/etc/hosts:ro
     logging:
       driver : local
       options:
@@ -86,6 +96,8 @@ services:
     image: devopsedaya/dcc-email-api-release-v-1.3.001:latest
     container_name: email-api-dcc
     hostname: email-api-dcc
+    volumes:
+      - /etc/hosts:/etc/hosts:ro
     logging:
       driver : local
       options:
@@ -99,6 +111,8 @@ services:
     image: devopsedaya/dcc-cron-jobs-release-v-1.1.002:latest
     container_name: cron-jobs-dcc
     hostname: cron-jobs-dcc
+    volumes:
+      - /etc/hosts:/etc/hosts:ro
     logging:
       driver : local
       options:
@@ -112,6 +126,8 @@ services:
     image: devopsedaya/dcc-usermanagement-release-v-1.1.001:latest
     container_name: usermodule-api-dcc
     hostname: usermodule-api-dcc
+    volumes:
+      - /etc/hosts:/etc/hosts:ro
     logging:
       driver : local
       options:
@@ -125,6 +141,8 @@ services:
     image: indukishen/mail-analyser:0.0.5.RELEASE
     container_name: email-analyser-dcc
     hostname: email-analyser-dcc
+    volumes:
+      - /etc/hosts:/etc/hosts:ro
     logging:
       driver : local
       options:
@@ -138,6 +156,8 @@ services:
     image: devopsedaya/dcc-routing-release-v-1.1.001:latest
     container_name: routing-engine-dcc
     hostname: routing-engine-dcc
+    volumes:
+      - /etc/hosts:/etc/hosts:ro
     logging:
       driver : local
       options:
@@ -151,6 +171,8 @@ services:
     image: devopsedaya/dcc-queing-release-v-1.1.001:latest
     container_name: queuing-engine-dcc
     hostname: queuing-engine-dcc
+    volumes:
+      - /etc/hosts:/etc/hosts:ro
     logging:
       driver : local
       options:
@@ -164,6 +186,8 @@ services:
     image: devopsedaya/dcc-api-gateway-release-v-1.1.001:latest
     container_name: api-gateway-dcc
     hostname: api-gateway-dcc
+    volumes:
+      - /etc/hosts:/etc/hosts:ro
     logging:
       driver : local
       options:
