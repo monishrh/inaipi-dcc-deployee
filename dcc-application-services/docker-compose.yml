@@ -27,7 +27,7 @@ services:
         max-size: "10M"
     restart: always
     ports:
-      - "8006:8005"
+      - "8006:8006"
     networks:
       - dcc-network
   chat-api:
@@ -43,7 +43,7 @@ services:
         max-size: "10M"
     restart: always
     ports:
-      - "8007:8001"
+      - "8001:8001"
     networks:
       - dcc-network
   uilogs-api:
@@ -58,7 +58,7 @@ services:
         max-size: "10M"
     restart: always
     ports:
-      - "8008:8006"
+      - "8008:8008"
     networks:
       - dcc-network
   file-service:
@@ -73,7 +73,7 @@ services:
         max-size: "10M"
     restart: always
     ports:
-      - "8009:8090"
+      - "8090:8090"
     networks:
       - dcc-network
   dcc-reports:
@@ -88,7 +88,7 @@ services:
         max-size: "10M"
     restart: always
     ports:
-      - "8010:8040"
+      - "8040:8040"
     networks:
       - dcc-network
   
