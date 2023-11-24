@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   social-webhook:
-    image: devopsedaya/dcc-socialmedia-webhook-release-v-1.1.001:latest
+    image: devopsedaya/ntt-dcc-socialmedia-webhook-release-v-1.1.001:latest
     container_name: social-webhook-dcc
     hostname: social-webhook-dcc
     volumes:
