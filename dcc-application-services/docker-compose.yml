@@ -153,7 +153,7 @@ services:
     networks:
       - dcc-network
   routing-engine:
-    image: devopsedaya/dcc-routing-release-v-1.1.002:latest
+    image: praveensk1301/routingrepo201:enginenttv2
     container_name: routing-engine-dcc
     hostname: routing-engine-dcc
     volumes:
