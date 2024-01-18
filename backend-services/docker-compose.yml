@@ -1,20 +1,5 @@
 version: '3.9'
 services:
-  mongoDB:
-    image: 'mongo:5.0'
-    container_name: dcc-mongo-db
-    hostname: inaipi-mongodb
-    logging:
-      driver : local
-      options:
-        max-size: "10M"
-    restart: always
-    ports:
-      - '27017:27017'
-    volumes:
-      - 'mongoDb:/data/db'
-    networks:
-      - dcc-network
   redis:
     image: 'redis/redis-stack:6.2.6-v7'
     container_name: dcc-redis-stack
@@ -29,18 +14,6 @@ services:
       - '8000:8001'
     volumes:
       - 'redisData:/data'
-    networks:
-      - dcc-network
-  mssql:
-    image: 'mcr.microsoft.com/mssql/server:2022-latest'
-    container_name: dcc-mssql-db
-    hostname: inaipi-mssql
-    restart: always
-    ports:
-      - '1433:1433'
-    environment:
-      ACCEPT_EULA: 'Y'
-      MSSQL_SA_PASSWORD: inaipi@2022$$
     networks:
       - dcc-network
   rabbitMQ:
@@ -77,9 +50,7 @@ services:
     networks:
       - dcc-network
 volumes:
-  mongoDb: null
   redisData: null
-  mssqlData: null
   rabbitData: null
 networks:
   dcc-network:
