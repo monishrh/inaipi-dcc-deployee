@@ -133,7 +133,7 @@ services:
     networks:
       - dcc-network
   routing-engine:
-    image: praveensk1301/routingrepo201:enginenttv3
+    image: praveensk1301/routingrepo201:enginesltv1
     container_name: routing-engine-dcc
     hostname: routing-engine-dcc
     logging:
