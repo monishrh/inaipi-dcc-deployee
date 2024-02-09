@@ -81,7 +81,7 @@ services:
       - dcc-network
   
   dcc-email:
-    image: devopsedaya/dcc-slt-email-api-release-v-1.4.002:latest
+    image: devopsedaya/dcc-slt-email-api-release-v-1.4.003:latest
     container_name: email-api-dcc
     hostname: email-api-dcc
     logging:
