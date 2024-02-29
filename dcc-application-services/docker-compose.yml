@@ -27,7 +27,7 @@ services:
     networks:
       - dcc-network
   chat-api:
-    image: devopsedaya/avaya-slt-inaipi-digital-channels-release-v-1.4.013:latest
+    image: devopsedaya/avaya-slt-inaipi-digital-channels-release-v-1.4.014:latest
     container_name: chat-api-server-dcc
     hostname: chat-api-server-dcc
     cpus: 4
@@ -81,7 +81,7 @@ services:
       - dcc-network
   
   dcc-email:
-    image: devopsedaya/dcc-slt-email-api-release-v-1.4.007:latest
+    image: devopsedaya/dcc-slt-email-api-release-v-1.4.008:latest
     container_name: email-api-dcc
     hostname: email-api-dcc
     logging:
