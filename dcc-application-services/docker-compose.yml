@@ -133,7 +133,7 @@ services:
     networks:
       - dcc-network
   routing-engine:
-    image: nareshk17/inaipi-dcc-routing-engine-release-v-1.2.002:latest
+    image: nareshk17/inaipi-dcc-routing-engine-release-v-1.2.003:latest
     container_name: routing-engine-dcc
     hostname: routing-engine-dcc
     logging:
