@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   social-webhook:
-    image: devopsedaya/dcc-socialmedia-webhook-release-v-1.1.001:latest
+    image: devopsedaya/dcc-slt-socialmedia-webhook-release-v-1.4.001:latest
     container_name: social-webhook-dcc
     hostname: social-webhook-dcc
     logging:
@@ -14,7 +14,7 @@ services:
     networks:
       - dcc-network
   chat-websocket:
-    image: devopsedaya/inaipi-dcc-socketio-release-v-1.1.001:latest
+    image: devopsedaya/dcc-slt-socketio-release-v-1.4.002:latest
     container_name: socket-server-dcc
     hostname: socket-server-dcc
     logging:
@@ -67,7 +67,7 @@ services:
     networks:
       - dcc-network
   dcc-reports:
-    image: devopsedaya/dcc-reports-release-v-1.1.001:latest
+    image: devopsedaya/dcc-reports-slt-release-v-1.1.002:latest
     container_name: report-api-dcc
     hostname: report-api-dcc
     logging:
@@ -81,7 +81,7 @@ services:
       - dcc-network
   
   dcc-email:
-    image: devopsedaya/dcc-email-api-release-v-1.3.001:latest
+    image: devopsedaya/dcc-slt-email-api-release-v-1.4.010:latest
     container_name: email-api-dcc
     hostname: email-api-dcc
     logging:
@@ -94,7 +94,7 @@ services:
     networks:
       - dcc-network
   dcc-cron:
-    image: devopsedaya/dcc-cron-jobs-release-v-1.1.002:latest
+    image: devopsedaya/dcc-slt-cron-jobs-release-v-1.4.004:latest
     container_name: cron-jobs-dcc
     hostname: cron-jobs-dcc
     logging:
@@ -133,7 +133,7 @@ services:
     networks:
       - dcc-network
   routing-engine:
-    image: devopsedaya/dcc-routing-release-v-1.1.001:latest
+    image: nareshk17/inaipi-dcc-routing-engine-release-v-1.2.003:latest
     container_name: routing-engine-dcc
     hostname: routing-engine-dcc
     logging:
@@ -146,7 +146,7 @@ services:
     networks:
       - dcc-network
   queuing-engine:
-    image: devopsedaya/dcc-queing-release-v-1.1.001:latest
+    image: nareshk17/inaipi-dcc-queuing-release-v-1.2.000:latest
     container_name: queuing-engine-dcc
     hostname: queuing-engine-dcc
     logging:
