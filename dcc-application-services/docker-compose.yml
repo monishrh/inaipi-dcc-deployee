@@ -168,7 +168,7 @@ services:
     networks:
       - dcc-network
   queuing-engine:
-    image: nareshk17/inaipi-dcc-queuing-release-v-1.3.000:latest
+    image: nareshk17/inaipi-dcc-queuing-release-v-1.3.001:latest
     container_name: queuing-engine-dcc
     hostname: queuing-engine-dcc
     volumes:
