@@ -14,7 +14,7 @@ services:
     networks:
       - dcc-network
   chat-websocket:
-    image: devopsedaya/dcc-slt-socketio-release-v-1.4.006:latest
+    image: devopsedaya/dcc-slt-socketio-release-v-1.4.007:latest
     container_name: socket-server-dcc
     hostname: socket-server-dcc
     logging:
