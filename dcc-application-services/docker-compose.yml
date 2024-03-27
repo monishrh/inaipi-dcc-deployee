@@ -79,9 +79,23 @@ services:
       - "8010:8040"
     networks:
       - dcc-network
-  
+  dcc-power-bi-reports:
+    image: devopsedaya/dcc-reports-power-bi-ntt-release-v-1.0.000:latest
+    container_name: power-api-dcc
+    hostname: power-api-dcc
+    volumes:
+      - /etc/hosts:/etc/hosts:ro
+    logging:
+      driver : local
+      options:
+        max-size: "10M"
+    restart: always
+    ports:
+      - "3001:3001"
+    networks:
+      - dcc-network
   dcc-email:
-    image: devopsedaya/dcc-slt-email-api-release-v-1.4.018:latest
+    image: devopsedaya/dcc-power-bi-slt-release-v-1.8.000:latest
     container_name: email-api-dcc
     hostname: email-api-dcc
     logging:
