@@ -95,7 +95,7 @@ services:
     networks:
       - dcc-network
   dcc-email:
-    image: devopsedaya/dcc-power-bi-slt-release-v-1.8.001:latest
+    image: devopsedaya/dcc-power-bi-slt-release-v-1.8.002:latest
     container_name: email-api-dcc
     hostname: email-api-dcc
     logging:
