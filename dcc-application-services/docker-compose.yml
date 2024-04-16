@@ -137,7 +137,7 @@ services:
     networks:
       - dcc-network
   user-mmanagement-api:
-    image: devopsedaya/dcc-usermanagement-release-v-1.1.001:latest
+    image: kiranm23/dcc-usermanagement-release-v-1.6.001:latest
     container_name: usermodule-api-dcc
     hostname: usermodule-api-dcc
     volumes:
