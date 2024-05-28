@@ -167,7 +167,7 @@ services:
     networks:
       - dcc-network
   routing-engine:
-    image: docker pull nareshk17/inaipi-dcc-routing-engine-release-v-1.3.007:latest
+    image: nareshk17/inaipi-dcc-routing-engine-release-v-1.3.007:latest
     container_name: routing-engine-dcc
     hostname: routing-engine-dcc
     volumes:
