@@ -147,7 +147,7 @@ services:
     networks:
       - dcc-network
   routing-engine:
-    image: nareshk17/inaipi-dcc-routing-engine-release-v-1.3.006
+    image: nareshk17/inaipi-dcc-routing-engine-release-v-1.3.008:latest
     container_name: routing-engine-dcc
     hostname: routing-engine-dcc
     logging:
