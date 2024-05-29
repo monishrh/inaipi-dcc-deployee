@@ -121,7 +121,7 @@ services:
     networks:
       - dcc-network
   user-mmanagement-api:
-    image: kiranm23/dcc-usermanagement-slt-release-v-1.1.006:latest
+    image: kiranm23/dcc-usermanagement-slt-release-v-1.1.005:latest
     container_name: usermodule-api-dcc
     hostname: usermodule-api-dcc
     logging:
