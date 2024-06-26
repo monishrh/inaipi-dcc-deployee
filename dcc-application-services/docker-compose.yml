@@ -80,7 +80,7 @@ services:
     networks:
       - dcc-network
   dcc-power-bi-reports:
-    image: devopsedaya/dcc-reports-power-bi-slt-release-v-1.0.007:latest
+    image: devopsedaya/dcc-reports-power-bi-slt-release-v-1.0.008:latest
     container_name: power-api-dcc
     hostname: power-api-dcc
     volumes:
