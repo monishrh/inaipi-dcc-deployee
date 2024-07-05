@@ -31,7 +31,7 @@ services:
     networks:
       - dcc-network
   chat-api:
-    image: devopsedaya/avaya-ntt-inaipi-digital-channels-release-v-1.4.091-node-18:latest
+    image: devopsedaya/avaya-ntt-inaipi-digital-channels-release-v-1.4.092-node-18:latest
     container_name: chat-api-server-dcc
     hostname: chat-api-server-dcc
     volumes:
