@@ -14,7 +14,7 @@ services:
     networks:
       - dcc-network
   chat-websocket:
-    image: devopsedaya/dcc-slt-socketio-release-v-1.4.008:latest
+    image: devopsedaya/dcc-agmc-socketio-release-v-1.4.001:latest
     container_name: socket-server-dcc
     hostname: socket-server-dcc
     logging:
@@ -27,7 +27,7 @@ services:
     networks:
       - dcc-network
   chat-api:
-    image: devopsedaya/avaya-slt-inaipi-digital-channels-release-v-1.4.103:latest
+    image: devopsedaya/dcc-agmc-inaipi-digital-channels-release-v-1.4.001:latest
     container_name: chat-api-server-dcc
     hostname: chat-api-server-dcc
     cpus: 4
@@ -67,7 +67,7 @@ services:
     networks:
       - dcc-network
   dcc-reports:
-    image: devopsedaya/dcc-reports-slt-release-v-1.1.007:latest
+    image: devopsedaya/dcc-reports-agmc-release-v-1.1.001:latest
     container_name: report-api-dcc
     hostname: report-api-dcc
     logging:
@@ -80,7 +80,7 @@ services:
     networks:
       - dcc-network
   dcc-power-bi-reports:
-    image: devopsedaya/dcc-reports-power-bi-slt-release-v-1.0.010:latest
+    image: devopsedaya/dcc-reports-power-bi-agmc-release-v-1.0.001:latest
     container_name: power-api-dcc
     hostname: power-api-dcc
     volumes:
@@ -95,7 +95,7 @@ services:
     networks:
       - dcc-network
   dcc-email:
-    image: devopsedaya/dcc-slt-email-api-release-v-1.4.052:latest
+    image: devopsedaya/dcc-agmc-email-api-release-v-1.4.002:latest
     container_name: email-api-dcc
     hostname: email-api-dcc
     logging:
@@ -108,7 +108,7 @@ services:
     networks:
       - dcc-network
   dcc-cron:
-    image: devopsedaya/dcc-slt-cron-jobs-release-v-1.4.007:latest
+    image: devopsedaya/dcc-agmc-cron-jobs-release-v-1.4.001:latest
     container_name: cron-jobs-dcc
     hostname: cron-jobs-dcc
     logging:
