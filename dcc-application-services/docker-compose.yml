@@ -67,7 +67,7 @@ services:
     networks:
       - dcc-network
   dcc-reports:
-    image: devopsedaya/dcc-reports-slt-release-v-1.1.008:latest
+    image: devopsedaya/dcc-reports-slt-release-v-1.1.009:latest
     container_name: report-api-dcc
     hostname: report-api-dcc
     logging:
