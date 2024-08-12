@@ -136,6 +136,23 @@ services:
       - "8070:8070"
     networks:
       - dcc-network
+
+  dcc-public-service:
+    image: devopsedaya/dcc-ntt-public-service-release-v-1.8.001:latest
+    container_name: public-service-dcc
+    hostname: public-service-dcc
+    volumes:
+      - /etc/hosts:/etc/hosts:ro
+    logging:
+      driver : local
+      options:
+        max-size: "10M"
+    restart: always
+    ports:
+      - "8077:8077"
+    networks:
+      - dcc-network
+      
   user-mmanagement-api:
     image: kiranm23/dcc-usermanagement-ntt-release-v-1.1.015:latest
     container_name: usermodule-api-dcc
