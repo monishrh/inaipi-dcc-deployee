@@ -27,7 +27,7 @@ services:
     networks:
       - dcc-network
   chat-api:
-    image: devopsedaya/avaya-gcb-inaipi-digital-channels-release-v-1.4.073:latest
+    image: devopsedaya/avaya-gcb-inaipi-digital-channels-release-v-1.4.074:latest
     container_name: chat-api-server-dcc
     hostname: chat-api-server-dcc
     cpus: 4
