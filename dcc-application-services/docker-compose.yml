@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   social-webhook:
-    image: devopsedaya/dcc-slt-socialmedia-webhook-release-v-1.4.003:latest
+    image: devopsedaya/dcc-slt-socialmedia-webhook-release-v-1.4.004:latest
     container_name: social-webhook-dcc
     hostname: social-webhook-dcc
     volumes:
@@ -16,7 +16,7 @@ services:
     networks:
       - dcc-network
   chat-websocket:
-    image: devopsedaya/dcc-ntt-socketio-release-v-1.4.018:latest
+    image: devopsedaya/dcc-ntt-socketio-release-v-1.4.019:latest
     container_name: socket-server-dcc
     hostname: socket-server-dcc
     volumes:
@@ -31,7 +31,7 @@ services:
     networks:
       - dcc-network
   chat-api:
-    image: devopsedaya/avaya-ntt-inaipi-digital-channels-release-v-1.4.134-node-18:latest
+    image: devopsedaya/avaya-ntt-inaipi-digital-channels-release-v-1.4.135-node-18:latest
     container_name: chat-api-server-dcc
     hostname: chat-api-server-dcc
     volumes:
@@ -138,7 +138,7 @@ services:
       - dcc-network
 
   dcc-public-service:
-    image: devopsedaya/dcc-ntt-public-service-release-v-1.8.005:latest
+    image: devopsedaya/dcc-ntt-public-service-release-v-1.8.006:latest
     container_name: public-service-dcc
     hostname: public-service-dcc
     volumes:
