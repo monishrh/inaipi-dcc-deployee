@@ -122,7 +122,7 @@ services:
     networks:
       - dcc-network
   dcc-cron:
-    image: devopsedaya/dcc-ntt-cron-jobs-release-v-1.4.002:latest
+    image: devopsedaya/dcc-ntt-cron-jobs-release-v-1.4.001:latest
     container_name: cron-jobs-dcc
     hostname: cron-jobs-dcc
     volumes:
