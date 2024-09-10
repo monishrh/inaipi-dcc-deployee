@@ -154,7 +154,7 @@ services:
       - dcc-network
       
   user-mmanagement-api:
-    image: kiranm23/dcc-usermanagement-ntt-release-v-1.1.016:latest
+    image: kiranm23/dcc-usermanagement-ntt-release-v-1.1.017:latest
     container_name: usermodule-api-dcc
     hostname: usermodule-api-dcc
     volumes:
