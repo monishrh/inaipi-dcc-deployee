@@ -16,7 +16,7 @@ services:
     networks:
       - dcc-network
   chat-websocket:
-    image: devopsedaya/Duserver-naipi-dcc-socketio-release-v-1.1.001:latest
+    image: devopsedaya/duserver-naipi-dcc-socketio-release-v-1.1.001:latest
     container_name: socket-server-dcc
     hostname: socket-server-dcc
     volumes:
