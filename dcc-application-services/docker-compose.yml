@@ -31,7 +31,7 @@ services:
     networks:
       - dcc-network
   chat-api:
-    image: devopsedaya/Duserver-inaipi-digital-channels-release-v-1.4.001-node-18:latest
+    image: devopsedaya/duserver-inaipi-digital-channels-release-v-1.4.001-node-18:latest
     container_name: chat-api-server-dcc
     hostname: chat-api-server-dcc
     volumes:
