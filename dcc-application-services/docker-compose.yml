@@ -43,7 +43,7 @@ services:
         max-size: "10M"
     restart: always
     ports:
-      - "8001:8007"
+      - "8007:8001"
     networks:
       - dcc-network
   uilogs-api:
